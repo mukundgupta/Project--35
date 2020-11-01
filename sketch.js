@@ -1,5 +1,6 @@
 var dog, database,foodS,foodStock,fedTime,lastFed,feed,addFood,foodObj;
 var dogName;
+var M = 1;
 
 function preload(){
 sadDog=loadImage("images/dogImg.png");
@@ -20,6 +21,7 @@ function setup() {
 button.hide();
 nameDog.hide();
 dogName = nameDog.value();
+M=2;
  })
   
   
@@ -52,17 +54,9 @@ function draw() {
  
   textSize(30);
   fill("white");
-  text("Name of Dog: " + dogName,10,350)
-  if(dogName === "Name of your Dog"){
-  if(lastFed>=12){
-    
-    text("Last Fed At : "+ lastFed%12 + " PM", 200,60);
-   }else if(lastFed==0){
-     text("Last Fed At: 12 AM",200,30);
-   }else{
-     text("Last Fed At: "+ lastFed + " AM", 200,60);
-   }
-  }else{
+ console.log("Name")
+  if(M===2){
+    text("Name of Dog: " + dogName,10,350)
     if(lastFed>=12){
     
       text(""+dogName+" was last Fed At : "+ lastFed%12 + " PM", 30,60);
